@@ -3,6 +3,7 @@ import cv2
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 webcam = cv2.VideoCapture(0)
 while True: 
+    # _ is used to discard the first returned value, which is a boolean indicating whether the frame was successfully captured.
     _, img=webcam.read()
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray, 1.5, 4)
